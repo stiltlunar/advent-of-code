@@ -16,12 +16,11 @@ function calcCalories(elf) {
 const calories = elves.map(elf => parseInt(calcCalories(elf)))
 
 // Sorts greatest to least
-// TODO: Check efficiency
-calories.sort((a, b) => b - a)
+calories.sort((a, b) => a - b)
 
 // Sums top three elves calories
-const topThree = calories[0] + calories[1] + calories[2]
+const topThree = calories.slice(-3).reduce((acc, curr) => acc + curr)
 
 // Logs required info
-console.log('The elf with the mostest has this many calories: ' + calories[0]);
+console.log('The elf with the most calories: ' + calories.at(-1));
 console.log('The top three elves have this many calories: ' + topThree);
