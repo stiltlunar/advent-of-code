@@ -17,15 +17,7 @@ const calories = elves.map(elf => parseInt(calcCalories(elf)))
 
 // Sorts greatest to least
 // TODO: Check efficiency
-calories.sort((a, b) => {
-  if (a > b) {
-    return -1
-  }
-  if (a < b) {
-    return 1
-  }
-  return 0
-})
+calories.sort((a, b) => b - a)
 
 // Sums top three elves calories
 const topThree = calories[0] + calories[1] + calories[2]
