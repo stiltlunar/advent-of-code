@@ -6,14 +6,13 @@ const input = fs.readFileSync('./input.txt', {encoding: 'utf8'})
 const elves = input.split('\n\n')
 
 // Calculates total calories based on elves meals
-// TODO: fix where single meal returns string instead of number
 function calcCalories(elf) {
   const calories = elf.split('\n')
-  return calories.reduce((acc, curr) => parseInt(acc) + parseInt(curr))
+  return parseInt(calories.reduce((acc, curr) => parseInt(acc) + parseInt(curr)))
 }
 
 // Calculates all elves total calories
-const calories = elves.map(elf => parseInt(calcCalories(elf)))
+const calories = elves.map(elf => calcCalories(elf))
 
 // Sorts least to greatest
 calories.sort((a, b) => a - b)
