@@ -20,4 +20,6 @@ calories.sort((a, b) => {
   return 0
 })
 
-console.log(calories[calories.length - 1]);
+const topThree = calories[calories.length - 1] + calories[calories.length - 2] + calories[calories.length - 3]
+
+console.log(topThree);
