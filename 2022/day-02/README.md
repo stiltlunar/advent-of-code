@@ -47,7 +47,3 @@ Following the Elf's instructions for the second column, what would your total sc
 Part 1: 13446
 
 Part 2: 13509
-
-A & X = Rock
-B & Y = Paper
-C & Z = Scissors

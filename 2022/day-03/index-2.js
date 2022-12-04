@@ -1,7 +1,6 @@
 const fs = require('fs')
 
-let ansOne = 0
-let ansTwo = 0
+let answer = 0
 
 const values = {
   'a': 1,
@@ -58,24 +57,7 @@ const values = {
   'Z': 52
 }
 
-fs.readFileSync('./input.txt', {encoding: 'utf8'})
-  .split('\n')
-  .map(items => {
-    let half = items.length / 2
-    let first = items.slice(0, half).split('')
-    let second = items.slice(half, items.length + 1).split('')
-    let sameStuff = ''
-    first.forEach(char => {
-      second.forEach(char2 => {
-        if (char === char2) {
-          sameStuff = char
-        }
-      })
-    })
-    ansOne += values[sameStuff]
-  })
-
-const elves = fs.readFileSync('./input.txt', {encoding: 'utf8'})
+const elves = fs.readFileSync('./input-prod.txt', {encoding: 'utf8'})
   .split('\n')
 
 let acc = []
@@ -103,8 +85,7 @@ groups.forEach(group => {
       })
     })
   })
-  ansTwo += values[sameStuff]
+  answer += values[sameStuff]
 })
 
-console.log('Part 1: ' + ansOne);
-console.log('Part 2: ' + ansTwo);
+console.log('Part 2: ' + answer);
