@@ -103,11 +103,8 @@ groups.forEach(group => {
       })
     })
   })
-  console.log(sameStuff);
   ansTwo += values[sameStuff]
 })
-
-console.log(groups);
 
 console.log('Part 1: ' + ansOne);
 console.log('Part 2: ' + ansTwo);
